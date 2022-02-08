@@ -1,0 +1,23 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "A team profile generator that builds a html site to display staff information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brento20/team-profile-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brento20/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/Brento20/team-profile-generator#readme",
+  "dependencies": {
+    "inquire": "^0.4.8",
+    "jest": "^27.5.0"
+  }
+}
