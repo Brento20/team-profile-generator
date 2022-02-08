@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A team profile generator that builds a html site to display staff information",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "jest"
   },
