@@ -1,7 +1,8 @@
-const Employee = require('./lib/employee')
-const Manager = require('./lib/manager')
+const Employee = require('./lib/employee');
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
 
-const inquirer = require('inquirer')
+const inquirer = require('inquirer');
 
 const team = []; 
 
@@ -12,14 +13,6 @@ const addManager = () => {
             type: 'input',
             name: 'id',
             message: "Please enter the manager's ID.",
-            validate: idInput => {
-                if  (isNaN(idInput)) {
-                    console.log ("Please enter the manager's ID!")
-                    return false; 
-                } else {
-                    return true;
-                }
-            }
         },
         {
             type: 'input',
@@ -51,46 +44,68 @@ const addManager = () => {
             type: 'input',
             name: 'officeNumber',
             message: "Manager's office number",
-            validate: officeNumInput => {
-                if  (isNaN(officeNumInput)) {
-                    console.log ('Please enter an office number!')
-                    return false; 
-                } else {
-                    return true;
-                }
-            }
         }
     ])
     .then(managerInput => {
         const  { id, name, email, officeNumber } = managerInput; 
         const manager = new Manager (id, name, email, officeNumber);
         team.push(manager); 
-        console.log(manager); 
+        console.log(manager);
+        addEmployee();
     })
 };
 
-// const addEmployee = () => {
+const addEmployee = () => {
 
-// console.log(`
-// ************
-// Welcome ${Manager.name}, its time to build your team!
-// ************
-// `)
-    // return inquirer.prompt ([
-    //     {
-    //         type: 'input',
-    //         name: 'name',
-    //         message: 'Employees full name?', 
-    //         validate: nameInput => {
-    //             if (nameInput) {
-    //                 return true;x
-    //             } else {
-    //                 console.log ("Employee name field cannot be empty!");
-    //                 return false; 
-    //             }
-    //         }
-    //     },
-    // )
+console.log(`
+************
+
+Welcome Manager, its time to build your team!
+
+************
+`);
+console.log(team);
+
+        return inquirer.prompt ([
+            {
+                type: 'list',
+                name: 'role',
+                message: "Please choose your employee's role",
+                choices: ['Engineer', 'Intern']
+            },
+            {
+                type: 'input',
+                name: 'name',
+                message: "What's the name of the employee?", 
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: "Please enter the employee's ID.",
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: "Please enter the employee's email.",
+            },
+            {
+                type: 'input',
+                name: 'github',
+                message: "Please enter the employee's github username.",
+                when: (input) => input.role === "Engineer",
+            },
+            {
+                type: 'input',
+                name: 'school',
+                message: "Please enter the intern's school",
+                when: (input) => input.role === "Intern",
+            },
+            {
+                type: 'confirm',
+                name: 'confirmAddEmployee',
+                message: 'Would you like to add more team members?',
+                default: false
+            }
+])};
 
 addManager()
-//     .then (addEmployee)
