@@ -1,9 +1,10 @@
-const Employee = require('./lib/employee');
+
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const UnpaidLabour = require('./lib/unpaidLabour');
 
 const inquirer = require('inquirer');
+const fs = require('fs');
 
 const team = []; 
 
@@ -47,8 +48,8 @@ const start = () => {
             message: "Manager's office number",
         }
     ])
-    .then(managerInput => {
-        const  { id, name, email, officeNumber } = managerInput; 
+    .then(answers => {
+        const  { id, name, email, officeNumber } = answers; 
         const manager = new Manager (id, name, email, officeNumber);
         team.push(manager); 
         console.log(manager);
@@ -108,9 +109,9 @@ Welcome Manager, its time to build your team!
                 default: false
             }
         ])
-        .then(employeeData => {
+        .then(answers => {
             
-                    let { name, id, email, role, github, school} = employeeData; 
+                    let { name, id, email, role, github, school} = answers; 
                     let employee; 
             
                     if (role === "Engineer") {
@@ -127,15 +128,27 @@ Welcome Manager, its time to build your team!
                     team.push(employee); 
                     console.log(team);
 
+                    renderHTML(team);
+
                     
-                    if (confirmAddEmployee) {
-                        console.log('selected yes')
-                        return addEmployee(team)                       
-                    } else {
-                        console.log('selected no')
-                        return team
-                    }
+                    // if (confirmAddEmployee) {
+                    //     console.log('selected yes')
+                    //     return addEmployee(team)                       
+                    // } else {
+                    //     console.log('selected no')
+                    //     return team
+                    // }
         })
     };
 
-start()
+
+    const renderHTML = (data) => {
+
+        console.log(manager.name);
+
+        console.log(UnpaidLabour.name);
+
+
+    }
+
+start();
