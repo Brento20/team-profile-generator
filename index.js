@@ -1,13 +1,14 @@
 const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
+const UnpaidLabour = require('./lib/unpaidLabour');
 
 const inquirer = require('inquirer');
 
 const team = []; 
 
 
-const addManager = () => {
+const start = () => {
     return inquirer.prompt ([
         {
             type: 'input',
@@ -64,14 +65,14 @@ Welcome Manager, its time to build your team!
 
 ************
 `);
-console.log(team);
+
 
         return inquirer.prompt ([
             {
                 type: 'list',
                 name: 'role',
                 message: "Please choose your employee's role",
-                choices: ['Engineer', 'Intern']
+                choices: ['Engineer', 'UnpaidLabour']
             },
             {
                 type: 'input',
@@ -98,7 +99,7 @@ console.log(team);
                 type: 'input',
                 name: 'school',
                 message: "Please enter the Unpaid Labourer's school",
-                when: (input) => input.role === "Intern",
+                when: (input) => input.role === "UnpaidLabour",
             },
             {
                 type: 'confirm',
@@ -124,9 +125,17 @@ console.log(team);
                     }
             
                     team.push(employee); 
-
                     console.log(team);
+
+                    
+                    if (confirmAddEmployee) {
+                        console.log('selected yes')
+                        return addEmployee(team)                       
+                    } else {
+                        console.log('selected no')
+                        return team
+                    }
         })
     };
 
-addManager()
+start()
