@@ -97,7 +97,7 @@ console.log(team);
             {
                 type: 'input',
                 name: 'school',
-                message: "Please enter the intern's school",
+                message: "Please enter the Unpaid Labourer's school",
                 when: (input) => input.role === "Intern",
             },
             {
@@ -106,6 +106,27 @@ console.log(team);
                 message: 'Would you like to add more team members?',
                 default: false
             }
-])};
+        ])
+        .then(employeeData => {
+            
+                    let { name, id, email, role, github, school} = employeeData; 
+                    let employee; 
+            
+                    if (role === "Engineer") {
+                        employee = new Engineer (name, id, email, github);
+            
+                        console.log(employee);
+            
+                    } else if (role === "UnpaidLabour") {
+                        employee = new UnpaidLabour (name, id, email, school);
+            
+                        console.log(employee);
+                    }
+            
+                    team.push(employee); 
+
+                    console.log(team);
+        })
+    };
 
 addManager()
