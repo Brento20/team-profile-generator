@@ -2,7 +2,9 @@
 ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br />
 ## Application Description
 
-This application runs using node js and creates a html file containing employee profiles for a organization. The way I chose to highlight roles was with the role name instead of an icon and with a colourful image in the employee card.
+This application runs using node js and creates a html file containing employee profiles for a organization. 
+
+The way I chose to highlight roles was with the role name title instead of an icon, and with a colorful image in the employee card. I was kinda inspired by pantone colour swatches.
 
 
 ## User Story
@@ -59,8 +61,9 @@ index.js			// runs the application (none index.js)
 (If needed please find the MP4 in the github repo ./readmeFiles/team profile generator.mp4)
 ![user demonstration](./readmeFiles/team profile generator.gif)
 
-This application includes `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes (in the `_tests_` directory) ALL pass.
 
-## Wireframe/Chicken Scribble.
+
+## Launched employee cards/Jest test results.
 ![cards](./readmeFiles/employeeCards.png)
+This application includes `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes (in the `_tests_` directory) ALL pass.
 ![passed tests](./readmeFiles/jesttest.png)

@@ -1,7 +1,7 @@
-const generateManager = function (manager) {
+const renderManager = function (manager) {
     return `
     <div class="card shadow" style="width: 16rem;" id="icon">
-    <img src="../src/images/manager.png" class="card-img-top" style="width: 14.5rem; height: 11rem">
+    <img src="../disp/images/manager.png" class="card-img-top" style="width: 14.5rem; height: 11rem">
     <div class="card-body">
         <h5 class="card-title">${manager.name}</h5>
                 <h4>Manager</h4>
@@ -16,10 +16,10 @@ const generateManager = function (manager) {
     `;
 }
 
-const generateEngineer = function (engineer) {
+const renderEngineer = function (engineer) {
     return `
     <div class="card shadow" style="width: 16rem;" id="icon">
-    <img src="../src/images/engineer.png" class="card-img-top" style="width: 14.5rem; height: 11rem">
+    <img src="../disp/images/engineer.png" class="card-img-top" style="width: 14.5rem; height: 11rem">
     <div class="card-body">
         <h5 class="card-title">${engineer.id}</h5>
                 <h4>Engineer</h4>
@@ -34,10 +34,10 @@ const generateEngineer = function (engineer) {
     `;
 }
 
-const generateUnpaid = function (unpaidLabour) {
+const renderUnpaid = function (unpaidLabour) {
     return `
     <div class="card shadow" style="width: 16rem;" id="icon">
-    <img src="../src/images/unpaidLabour.png" class="card-img-top" style="width: 14.5rem; height: 11rem">
+    <img src="../disp/images/unpaidLabour.png" class="card-img-top" style="width: 14.5rem; height: 11rem">
     <div class="card-body">
         <h5 class="Intern:">${unpaidLabour.id}</h5>
                 <h4>Intern</h4>
@@ -63,19 +63,19 @@ renderHTML = (data) => {
 
 
         if (role === 'Manager') {
-            const managerCard = generateManager(employee);
+            const managerCard = renderManager(employee);
             profileArray.push(managerCard);
         }
 
 
         if (role === 'Engineer') {
-            const engineerCard = generateEngineer(employee);
+            const engineerCard = renderEngineer(employee);
             profileArray.push(engineerCard);
         }
 
 
         if (role === 'UnpaidLabour') {
-            const unpaidCard = generateUnpaid(employee);
+            const unpaidCard = renderUnpaid(employee);
             profileArray.push(unpaidCard);
         }
         
@@ -85,8 +85,8 @@ renderHTML = (data) => {
     const employeeCards = profileArray.join('')
 
 
-    const generateTeam = renderTeamPage(employeeCards); 
-    return generateTeam;
+    const renderTeam = renderTeamPage(employeeCards); 
+    return renderTeam;
 
 }
 
