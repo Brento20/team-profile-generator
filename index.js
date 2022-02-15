@@ -123,92 +123,9 @@ const addEmployee = () => {
                     team.push(employee); 
                     console.log(team);
                 } 
-
-
-
-                
-                renderHTML(team);
-                
-
-                // if (confirmAddEmployee) {
-                //     console.log('selected yes')
-                //     addEmployee();                       
-                // } else {
-                //     console.log('selected no')
-                //     return team
-                // }
     })
 };
 
 
-    const renderHTML = () => {
-
-        let [manager, engineer] = team
-
-        console.log(manager.name);
-        console.log(engineer)
-}
-// `
-// <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="UTF-8">
-//     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <title>Document</title>
-// </head>
-// <body>
-    
-
-
-
-
-// <!-- manager card -->
-
-// <div class="card" style="width: 18rem;">
-//     <img src="./src/images/${JSON.stringify(team.name)}.jpeg" class="card-img-top" alt="...">
-//     <div class="card-body">
-//         <h5 class="card-title">${JSON.stringify(team.name)}</h5>
-//         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     </div>
-//     <ul class="list-group list-group-flush">
-//         <li class="list-group-item">Role: Manager</li>
-//         <li class="list-group-item">Office Number: ${JSON.stringify(team.officeNumber)}</li>
-//     </ul>
-//     <div class="card-body">
-//         <a href="#" class="card-link">Contact Email:${JSON.stringify(team.email)}</a>
-//     </div>
-// </div>
-
-
-// <!-- engineer card -->
-
-// <div class="card" style="width: 18rem;">
-//     <img src="./src/images/${JSON.stringify(team.name)}.jpeg" class="card-img-top" alt="...">
-//     <div class="card-body">
-//         <h5 class="card-title">${JSON.stringify(team.name)}</h5>
-//         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     </div>
-//     <ul class="list-group list-group-flush">
-//         <li class="list-group-item">Cras justo odio</li>
-//         <li class="list-group-item">Dapibus ac facilisis in</li>
-//         <li class="list-group-item">Vestibulum at eros</li>
-//     </ul>
-//     <div class="card-body">
-//         <a href="#" class="card-link">Contact Email</a>
-//         <a href="#" class="card-link">Github Link</a>
-//     </div>
-// </div>
-
-// </body>
-// </html>`
-// }
-
-// const startUp = () => {
-//     start()
-//         .then((team) => fs.writeFileSync('./disp/index.html', renderHTML(team)))
-//         .then(() => console.log('Successfully wrote to index.html'))
-//         .catch((err) => console.error(err));
-// };
 
 start();
