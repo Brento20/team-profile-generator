@@ -1,14 +1,18 @@
-
+//Class Links
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const UnpaidLabour = require('./lib/unpaidLabour');
 
+//SRC/Helper functions
 const renderHTML = require('./src/renderHTML');
+
+//Dependencies
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const team = []; 
 
+//When called creates the prompts to build a manager and stores object in the team array
+const team = []; 
 const start = () => {
     return inquirer.prompt ([
         {                   // Manager ID
@@ -67,6 +71,7 @@ const start = () => {
     })
 };
 
+//When called compiles the data for extra employees and pushes the resulting objects to the team array
 const addEmployees = () => {
     return inquirer.prompt ([
         {                   // Employee Role
@@ -137,7 +142,7 @@ const addEmployees = () => {
 };
 
 
-
+//Starts the application and prompts add employee then render and writes the HTML functions 
 start()
     .then(addEmployees)
     .then(team => {
@@ -148,7 +153,7 @@ start()
 });
 
 
-
+//Uses file system to write the compiled HTML to 
 const writeFile = data => {
     fs.writeFile('./disp/index.html', data, err => {
         if (err) {

@@ -1,5 +1,4 @@
 const Employee = require('../lib/employee.js')
-// const { expect } = require("@jest/globals");
 
 describe('Employee class', () => {
     describe('Create all staff', () => {

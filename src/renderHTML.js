@@ -1,7 +1,7 @@
 const generateManager = function (manager) {
     return `
     <div class="card shadow" style="width: 16rem;" id="icon">
-    <img src="../src/images/manager.png" class="card-img-top" style="width: 13.5rem;">
+    <img src="../src/images/manager.png" class="card-img-top" style="width: 14.5rem; height: 11rem">
     <div class="card-body">
         <h5 class="card-title">${manager.name}</h5>
                 <h4>Manager</h4>
@@ -19,7 +19,7 @@ const generateManager = function (manager) {
 const generateEngineer = function (engineer) {
     return `
     <div class="card shadow" style="width: 16rem;" id="icon">
-    <img src="../src/images/engineer.png" class="card-img-top" style="width: 13.5rem; height=5rem">
+    <img src="../src/images/engineer.png" class="card-img-top" style="width: 14.5rem; height: 11rem">
     <div class="card-body">
         <h5 class="card-title">${engineer.id}</h5>
                 <h4>Engineer</h4>
@@ -27,7 +27,7 @@ const generateEngineer = function (engineer) {
             <div class="card-body">
                 <p class="id">ID: ${engineer.name}</p>
                 <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="office">Github: <a href="https://github.${engineer.github}.com">${engineer.github}</a></p>
+                <p class="office">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@ const generateEngineer = function (engineer) {
 const generateUnpaid = function (unpaidLabour) {
     return `
     <div class="card shadow" style="width: 16rem;" id="icon">
-    <img src="../src/images/unpaidLabour.png" class="card-img-top" style="width: 13.5rem;">
+    <img src="../src/images/unpaidLabour.png" class="card-img-top" style="width: 14.5rem; height: 11rem">
     <div class="card-body">
         <h5 class="Intern:">${unpaidLabour.id}</h5>
                 <h4>Intern</h4>
