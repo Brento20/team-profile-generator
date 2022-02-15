@@ -4,14 +4,10 @@ const Engineer = require('./lib/engineer');
 const UnpaidLabour = require('./lib/unpaidLabour');
 
 const renderHTML = require('./src/renderHTML');
-
-
 const inquirer = require('inquirer');
 const fs = require('fs');
 
 const team = []; 
-
-
 const start = () => {
     return inquirer.prompt ([
         {
@@ -127,7 +123,7 @@ addEmployee = () => {
         team.push(employee); 
         console.log(team);
 
-        if (addEmployee) {
+        if (addEmployee == "y") {
             addEmployee(team); 
         } else {
             return team;
@@ -145,3 +141,17 @@ start()
 .then(pageHTML => {
     return writeFile(pageHTML);
 });
+
+
+
+const writeFile = data => {
+    fs.writeFile('./disp/index.html', data, err => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Successfully rendered index.html ✅ ")
+        }
+    })
+}; 
+
