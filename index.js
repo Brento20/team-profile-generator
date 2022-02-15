@@ -3,6 +3,9 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const UnpaidLabour = require('./lib/unpaidLabour');
 
+const renderHTML = require('./src/renderHTML');
+
+
 const inquirer = require('inquirer');
 const fs = require('fs');
 
@@ -62,11 +65,10 @@ const start = () => {
             *********************************************
 
         `);
-        addEmployee();
     })
 };
 
-const addEmployee = () => {
+addEmployee = () => {
     return inquirer.prompt ([
         {
             type: 'list',
@@ -103,29 +105,43 @@ const addEmployee = () => {
         },
         {
             type: 'confirm',
-            name: 'confirmAddEmployee',
+            name: 'addEmployee',
             message: 'Would you like to add more team members?',
             default: false
         }
     ])
     .then(answers => {
         
-                let { name, id, email, role, github, school} = answers; 
-                let employee; 
-        
-                if (role === "Engineer") {
-                    employee = new Engineer (name, id, email, github);
-        
-                    console.log(employee);
-        
-                } else if (role === "UnpaidLabour") {
-                    employee = new UnpaidLabour (name, id, email, school);
-                    team.push(employee); 
-                    console.log(team);
-                } 
+        let { name, id, email, role, github, school, addEmployee} = answers; 
+        let employee; 
+
+        if (role === "Engineer") {
+            employee = new Engineer (name, id, email, github);
+
+            console.log(employee);
+
+        } else if (role === "UnpaidLabour") {
+            employee = new UnpaidLabour (name, id, email, school);
+        } 
+
+        team.push(employee); 
+        console.log(team);
+
+        if (addEmployee) {
+            addEmployee(team); 
+        } else {
+            return team;
+        }
     })
 };
 
 
 
-start();
+start()
+    .then(addEmployee)
+    .then(team => {
+    return renderHTML(team);
+})
+.then(pageHTML => {
+    return writeFile(pageHTML);
+});

@@ -16,7 +16,7 @@ const generateManager = function (manager) {
     `;
 }
 
-const generateManager = function (engineer) {
+const generateEngineer = function (engineer) {
     return `
     <div class="card" style="width: 18rem;">
     <img src="./src/images/engineer.jpeg" class="card-img-top" alt="...">
@@ -34,7 +34,7 @@ const generateManager = function (engineer) {
     `;
 }
 
-const generateManager = function (unpaidLabour) {
+const generateUnpaid = function (unpaidLabour) {
     return `
     <div class="card" style="width: 18rem;">
     <img src="./src/images/unpaidLabour.jpeg" class="card-img-top" alt="...">
