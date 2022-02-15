@@ -1,56 +1,82 @@
 
     <!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>Team Profile Generator</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        <title>Weather App</title>
+    
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+        <!-- CSS -->
+        <link rel="stylesheet" href="../disp/reset.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>  
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../disp/style.css">
-
+    
     </head>
     <body>
-        <header>
-            <nav class="navbar" id="navbar">
-                <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Team Profile</span>
-            </nav>
-        </header>
-        <main>
-            <div class="container">
-                <div class="row justify-content-center" id="team-cards">
-                    
-    <div class="card" style="width: 18rem;">
-    <img src="../src/images/manager.png" class="card-img-top" alt="...">
+
+    <!-- Header -->
+    <header class="headerStyle container-xxl">
+        <div>
+        <i class="fa-regular fa-face-awesome"></i></i><h1>Building Teams... <br> kinda!</h1>
+        </div>
+    </header>
+
+    <!-- Weather Cards -->
+    <div class="row align-items-space-around" id="weatherPanelMain">
+        <div>
+                
+    <div class="card shadow" style="width: 16rem;" id="icon">
+    <img src="../src/images/manager.png" class="card-img-top" style="width: 14.5rem; height: 10rem">
     <div class="card-body">
-        <h5 class="card-title">Brenton Weavert</h5>
-                <h4>Manager</h4><i class="material-icons">content_paste</i>
+        <h5 class="card-title">Brenton Weaver</h5>
+                <h4>Manager</h4>
             </div>
             <div class="card-body">
                 <p class="id">ID: 01</p>
-                <p class="email">Email: <a href="mailto:b.weaver@gmail.com">b.weaver@gmail.com</a></p>
-                <p class="office">Office Number: 123456</p>
+                <p class="email">Email: <a href="mailto:brenton.weaver@gmail.com">brenton.weaver@gmail.com</a></p>
+                <p class="office">Office Number: #10</p>
             </div>
         </div>
     </div>
     
-    <div class="card" style="width: 18rem;">
-    <img src="../src/images/engineer.png" class="card-img-top">
+    <div class="card shadow" style="width: 16rem;" id="icon">
+    <img src="../src/images/unpaidLabour.png" class="card-img-top" style="width: 14.5rem; height: 10rem">
     <div class="card-body">
-        <h5 class="card-title">02</h5>
+        <h5 class="Intern:">02</h5>
+                <h4>Intern</h4>
+            </div>
+            <div class="card-body">
+                <p class="id">ID: </p>
+                <p class="email">Email: <a href="mailto:chris@gmail.com">chris@gmail.com</a></p>
+                <p class="office">Student School: idjowd</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card shadow" style="width: 16rem;" id="icon">
+    <img src="../src/images/engineer.png" class="card-img-top" style="width: 14.5rem; height: 10rem">
+    <div class="card-body">
+        <h5 class="card-title">bih</h5>
                 <h4>Engineer</h4>
             </div>
             <div class="card-body">
-                <p class="id">ID: Paul West</p>
-                <p class="email">Email: <a href="mailto:p@busy.com">p@busy.com</a></p>
-                <p class="office">Office Number: <a href="https://github.pwest.com">pwest</a></p>
+                <p class="id">ID: lcdsjin</p>
+                <p class="email">Email: <a href="mailto:ksjhdcj">ksjhdcj</a></p>
+                <p class="office">Github: <a href="https://github.ldscbh.com">ldscbh</a></p>
             </div>
         </div>
     </div>
     
-                </div>
-            </div>
-        </main>
+        </div>
+    </div>
         
     </body>
     </html>

@@ -75,15 +75,23 @@ const addEmployees = () => {
             message: "Please choose your employee's role",
             choices: ['Engineer', 'UnpaidLabour']
         },
-        {                   // Employee Name
-            type: 'input',
-            name: 'name',
-            message: "What's the name of the employee?", 
-        },
         {                   // Employee ID
             type: 'input',
             name: 'id',
             message: "Please enter the employee's ID.",
+        },
+        {                   // Employee Name
+            type: 'input',
+            name: 'name',
+            message: "What's the name of the employee?",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log ("Name field cannot be empty!");
+                    return false; 
+                }
+            } 
         },
         {                   // Employee Email
             type: 'input',
@@ -109,7 +117,6 @@ const addEmployees = () => {
         }
     ])
     .then(answers => {
-        
         let { name, id, email, role, github, school, addEmployee} = answers; 
         let employee; 
 
