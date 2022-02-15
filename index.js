@@ -8,14 +8,15 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 const team = []; 
+
 const start = () => {
     return inquirer.prompt ([
-        {
+        {                   // Manager ID
             type: 'input',
             name: 'id',
             message: "Please enter the manager's ID.",
         },
-        {
+        {                   // Manager Name
             type: 'input',
             name: 'name',
             message: 'Managers full name?', 
@@ -28,7 +29,7 @@ const start = () => {
                 }
             }
         },
-        {
+        {                   // Manager Email
             type: 'input',
             name: 'email',
             message: "Manager's email.",
@@ -41,7 +42,7 @@ const start = () => {
                 }
             }
         },
-        {
+        {                   // Manager Office Number
             type: 'input',
             name: 'officeNumber',
             message: "Manager's office number",
@@ -58,52 +59,53 @@ const start = () => {
 
             Welcome Manager, its time to build your team!
 
+                (Don't forget interns need to eat!!!)
+
             *********************************************
 
         `);
     })
 };
 
-addEmployee = () => {
+const addEmployees = () => {
     return inquirer.prompt ([
-        {
+        {                   // Employee Role
             type: 'list',
             name: 'role',
             message: "Please choose your employee's role",
             choices: ['Engineer', 'UnpaidLabour']
         },
-        {
+        {                   // Employee Name
             type: 'input',
             name: 'name',
             message: "What's the name of the employee?", 
         },
-        {
+        {                   // Employee ID
             type: 'input',
             name: 'id',
             message: "Please enter the employee's ID.",
         },
-        {
+        {                   // Employee Email
             type: 'input',
             name: 'email',
             message: "Please enter the employee's email.",
         },
-        {
+        {                   // Engineer GitHub
             type: 'input',
             name: 'github',
             message: "Please enter the employee's github username.",
             when: (input) => input.role === "Engineer",
         },
-        {
+        {                   // Unpaid Worker School
             type: 'input',
             name: 'school',
             message: "Please enter the Unpaid Labourer's school",
             when: (input) => input.role === "UnpaidLabour",
         },
-        {
-            type: 'confirm',
+        {                   // Add Another Employee
+            type: 'input',
             name: 'addEmployee',
-            message: 'Would you like to add more team members?',
-            default: false
+            message: 'Type "YES" to add more team members?',
         }
     ])
     .then(answers => {
@@ -113,18 +115,14 @@ addEmployee = () => {
 
         if (role === "Engineer") {
             employee = new Engineer (name, id, email, github);
-
-            console.log(employee);
-
         } else if (role === "UnpaidLabour") {
             employee = new UnpaidLabour (name, id, email, school);
         } 
 
         team.push(employee); 
-        console.log(team);
 
-        if (addEmployee == "y") {
-            addEmployee(team); 
+        if (addEmployee == "YES") {
+            return addEmployees(); 
         } else {
             return team;
         }
@@ -134,7 +132,7 @@ addEmployee = () => {
 
 
 start()
-    .then(addEmployee)
+    .then(addEmployees)
     .then(team => {
     return renderHTML(team);
 })

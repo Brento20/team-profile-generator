@@ -1,10 +1,10 @@
 const generateManager = function (manager) {
     return `
-    <div class="card" style="width: 18rem;">
-    <img src="./src/images/manager.jpeg" class="card-img-top" alt="...">
+    <div class="card" style="width: 18rem;" id="icon">
+    <img src="../src/images/manager.png" class="card-img-top" style="width: 100px;">
     <div class="card-body">
         <h5 class="card-title">${manager.name}</h5>
-                <h4>Manager</h4><i class="material-icons">content_paste</i>
+                <h4>Manager</h4>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${manager.id}</p>
@@ -18,16 +18,16 @@ const generateManager = function (manager) {
 
 const generateEngineer = function (engineer) {
     return `
-    <div class="card" style="width: 18rem;">
-    <img src="./src/images/engineer.jpeg" class="card-img-top" alt="...">
+    <div class="card" style="width: 18rem;" id="icon">
+    <img src="../src/images/engineer.png" class="card-img-top" style="width: 100px;">
     <div class="card-body">
         <h5 class="card-title">${engineer.name}</h5>
-                <h4>Manager</h4><i class="material-icons">content_paste</i>
+                <h4>Engineer</h4>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${engineer.id}</p>
                 <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="office">Office Number: ${engineer.github}</p>
+                <p class="office">Github: <a href="https://github.${engineer.github}.com">${engineer.github}</a></p>
             </div>
         </div>
     </div>
@@ -36,16 +36,16 @@ const generateEngineer = function (engineer) {
 
 const generateUnpaid = function (unpaidLabour) {
     return `
-    <div class="card" style="width: 18rem;">
-    <img src="./src/images/unpaidLabour.jpeg" class="card-img-top" alt="...">
+    <div class="card" style="width: 18rem;" id="icon">
+    <img src="../src/images/unpaidLabour.png" class="card-img-top" style="width: 100px;">
     <div class="card-body">
-        <h5 class="card-title">${unpaidLabour.name}</h5>
-                <h4>Manager</h4><i class="material-icons">content_paste</i>
+        <h5 class="Intern:">${unpaidLabour.name}</h5>
+                <h4>Intern</h4>
             </div>
             <div class="card-body">
                 <p class="id">ID: ${unpaidLabour.id}</p>
                 <p class="email">Email: <a href="mailto:${unpaidLabour.email}">${unpaidLabour.email}</a></p>
-                <p class="office">Office Number: ${unpaidLabour.school}</p>
+                <p class="office">Student School: ${unpaidLabour.school}</p>
             </div>
         </div>
     </div>
