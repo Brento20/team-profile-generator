@@ -6,6 +6,13 @@ This application runs using node js and creates a html file containing employee 
 
 The way I chose to highlight roles was with the role name title instead of an icon, and with a colorful image in the employee card. I was kinda inspired by pantone colour swatches.
 
+## LINK TO VIDEO
+
+
+https://vimeo.com/user167444778/review/679978672/f418cabd4a
+
+
+
 
 ## User Story
 
@@ -59,7 +66,7 @@ index.js			// runs the application (none index.js)
 
 ## Using the command line/terminal 
 (If needed please find the MP4 in the github repo ./readmeFiles/team profile generator.mp4)
-![user demonstration](./readmeFiles/team profile generator.gif)
+![user demonstration](readmeFiles/teamprofilegenerator.gif)
 
 
 
